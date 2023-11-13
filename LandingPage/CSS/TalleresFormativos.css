@@ -1,0 +1,539 @@
+/* Headboard */
+/* Global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  background-color: #1092de;
+  /* Pattern from https://www.heropatterns.com/ */
+  color: #1e272e;
+  color: #fff;
+  font-size: 16px;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1170px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1.5em;
+}
+
+/* CSS base para la navegación */
+.nav-main {
+font-size: 17px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60px;
+padding: 20px 0;
+background-color: #1092de; /* Color de fondo */
+color: #fff;
+}
+
+.nav-main .nav-brand {
+width: 310px;
+}
+
+.nav-main .nav-menu {
+display: flex;
+list-style: none;
+padding: 0;
+}
+
+.nav-main .nav-menu li {
+margin-right: 20px;
+}
+
+.nav-main .nav-menu li:last-child {
+margin-right: 0;
+}
+
+.nav-main .nav-menu a {
+text-decoration: none;
+color: #fff;
+}
+
+.menu-btn {
+display: none;
+cursor: pointer;
+position: absolute;
+top: 34px;
+right: 30px;
+z-index: 2;
+}
+
+/* Estilos para mostrar el menú en vista móvil (menos de 768px de ancho) */
+@media (max-width: 768px) {
+.nav-main .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #1092de; /* Color de fondo del menú en vista móvil */
+    width: 100%;
+}
+
+.nav-main .nav-menu.active {
+    display: flex;
+}
+
+.menu-btn {
+    display: block;
+}
+}
+
+/* SHOWCASE */
+.showcase {
+  width: 100%;
+  height: 550px;
+  background: url("/LandingPage/img/Banner_Talleres.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.showcase h2,
+.showcase p {
+  margin-bottom: 55px;
+  color: white;
+  font-size: 24px;
+}
+.showcase .btn {
+  margin-top: 20px;
+}
+.showcase h1{
+  font-size: 30px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-weight: bold;
+text-align: center;
+  color: #f8f7f7;
+}
+/* Estilo mejorado para Talleres */
+
+.section-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #333;
+}
+
+.cards-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.article-card {
+  background: rgb(79, 189, 45);
+  min-width: 300px;
+  max-width: 350px;
+  min-height: 400px;
+  max-height: 500px;
+  box-shadow: 0px 10px 50px #020202;
+  border-radius: 5px;
+  margin: 50px;
+  transition: 0.3s ease;
+}
+
+.article-card-head {
+  position: relative;
+  width: 100%;
+  height: 55%;
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.article-card-head img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.workshop-title {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px;
+  color: #fff;
+}
+
+.workshop-description {
+  font-weight: 300;
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+/*Actividades*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #000000;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.col {
+    width: calc(45% - 20px);
+}
+
+.container {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.front,
+.back {
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgb(175, 165, 165);
+    border-radius: 10px;
+    background-position: center;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    backface-visibility: hidden;
+    text-align: center;
+    min-height: 280px;
+    height: auto;
+    border-radius: 10px;
+    color: #f5ebeb;
+    font-size: 1.5rem;
+}
+
+.back {
+    background: linear-gradient(45deg, #cedce7 0%, rgba(5, 5, 5, 0.897)100%);
+}
+
+.front:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: block;
+    opacity: 0.6;
+    border-radius: 10px;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.inner {
+    transform: translateY(-50%) translateZ(60px) scale(0.94);
+    top: 50%;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    outline: 1px solid transparent;
+    perspective: inherit;
+    z-index: 2;
+}
+
+.container .back {
+    transform: rotateY(180deg);
+    transform-style: preserve-3d;
+}
+
+.container:hover .back {
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+}
+
+.container:hover .front {
+    transform: rotateY(-180deg);
+    transform-style: preserve-3d;
+}
+
+/* Agregar clases para fondos diferentes */
+.card1 {
+	background-image: url('/LandingPage/img/Futbol.jpg');
+}
+
+.card2 {
+	background-image: url('/LandingPage/img/Desfile.jpg');
+}
+
+.card3 {
+	background-image: url('/LandingPage/img/Mr_Sepulveda.jpg');
+}
+
+.card4 {
+    background-image: url('/LandingPage/img/Crea_Emprende.jpg');
+}
+
+/* Resto de los estilos se mantienen igual */
+
+h2{
+    font-size: 2.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    color: #444;
+    text-align: center;
+    margin: 2rem 0;    
+}
+
+/* Premios */
+/* Cards */
+.card__content h2 {
+  font-size: 2.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: #020202;
+}
+
+.card__content p{
+  font-size: 15px;
+  color: #000000;
+}
+
+.card-stripe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  box-sizing: border-box;
+  margin: 20px;
+  padding: 25px;
+  text-align: center;
+  width: calc(50% - 40px); /* width for 2 cards is 50%, but need to take the margin into account, 20px on the left, 20px on the right = 40px; */
+}
+
+.card__image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card h2 {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #020202;
+}
+
+a.btn {
+  text-decoration: none;
+  color: #FFF;
+  background: red;
+  display: inline-block;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+}
+
+    /* Convenios */
+.convenios-section {
+    background: linear-gradient(90deg, #f0f0f0, #d8d8d8); /* Fondo degradado suave */
+    padding: 20px 0; /* Espacio interior para mejorar la legibilidad */
+    text-align: center;
+}
+
+.center2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #020202; /* Color de texto */
+}
+
+.cont-princ-slider {
+    margin: 20px 0; /* Reduje el margen superior para un mejor espaciado */
+    height: 100px;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.slier-prin {
+    display: inline-flex;
+    -moz-animation: slider 8s infinite linear;
+    -webkit-animation: slider 10s infinite linear;
+    animation: slider 15s infinite linear;
+    height: 100%;
+    width: auto;
+}
+
+.juegos_DWG {
+    background: #ffffff00;
+    border: 1px solid #ffffff00;
+    line-height: 100px;
+    height: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+    width: 350px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes slider {
+    to {
+        -moz-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+    }
+}
+
+/*Site Footer*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #19a2f1;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+    margin-right: 80px; /* Añade un margen derecho para separar de la columna del logo */
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    max-width: 100%; /* Asegura que la imagen se ajuste al ancho de su contenedor */
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #fffbfb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+p {
+    text-transform: none;
+    font-weight: bold;
+}

@@ -1,0 +1,310 @@
+<!-- Headboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IEP José Buenaventura Sepúlveda</title>
+    <link rel="icon" type="image/x-icon" href="/LandingPage/img/logo-JBS.ico">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/LandingPage/Contactenos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/LandingPage/JS/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="menu-btn">
+        <i class="fas fa-bars fa-2x"></i>
+    </div>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav-main">
+            <!-- Brand -->
+            <img src="/LandingPage/img/Bienvenidos.png" alt="TechNews Logo" class="nav-brand">
+            <!-- Left Nav -->
+            <ul class="nav-menu">
+                <li>
+                    <a href="/LandingPage/HTML/quienessomos.html">Quienes Somos</a>
+                </li>
+                <li>
+                    <a href="/LandingPage/HTML/TalleresFormativos.html">Talleres Formativos</a>
+                </li>
+                <li>
+                    <a href="/LandingPage/Contactenos.html">Contáctenos</a>
+                </li>
+            </ul>
+
+            <!-- Right Nav -->
+            <ul class="nav-menu-right">
+            </ul>
+        </nav>
+        <hr>
+        <!-- Headboard -->
+
+        <!-- SHOWCASE -->
+        <header class="showcase">
+            <h1>¡Bienvenido al Colegio José Buenaventura Sepúlveda Fernández!</h1>
+            <p>EDUCACIÓN EN VALORES Y DESARROLLO EMPRESARIAL</p>
+            <p>¡Sepúlveda Honor y Gallardía, Ra, Ra, Ra!</p>
+        </header>
+
+        <div class="content">
+
+            <h1 class="logo" style="color: black;">Contáctenos</h1>
+            <hr style="border-color: #005cd4;">
+            <p style="color: black;  line-height: 2.5rem;">Valoramos tus comentarios y opiniones, por favor envíanos tus
+                consultas por este
+                medio con tus datos respectivos, nosotros nos pondremos en <br>
+                contacto contigo para absolver tus
+                inquietudes:
+                TU PARTICIPACIÓN ES ESENCIAL PARA AYUDARNOS A CONSTRUIR UN ENTORNO <br>
+                EDUCATIVO EXCEPCIONAL"</p>
+            <hr>
+            <div class="contact-wrapper animated bounceInUp">
+                <div class="contact-form">
+                    <h3 style="text-align: center;">¡Gracias por tomar un momento para completar este formulario!</h3>
+                    <div class="form-container">
+                        <form>
+                            <p>
+                                <label for="nombres">Nombres</label>
+                                <input type="text" id="nombres">
+                                <span class="icon" id="nombres-icon"></span>
+                            </p>
+                            <p>
+                                <label for="apellidos">Apellidos</label>
+                                <input type="text" id="apellidos">
+                                <span class="icon" id="apellidos-icon"></span>
+                            </p>
+                            <p>
+                                <label for="email">Email</label>
+                                <input type="email" id="email">
+                                <span class="icon" id="email-icon"></span>
+                            </p>
+                            <p>
+                                <label for="celular">Número de Celular</label>
+                                <input type="tel" id="celular">
+                                <span class="icon" id="celular-icon"></span>
+                            </p>
+                            <p>
+                                <label for="tipodocumento">Tipo de documento</label>
+                                <select type="text" id="tipodocumento">
+                                    <option value="DNI">DNI</option>
+                                    <option value="CNE">CNE</option>
+                                </select>
+                            </p>
+                            <p>
+                                <label for="numdocumento">Número de documento</label>
+                                <input type="Numbers" id="numdocumento">
+                                <span class="icon" id="numdocumento-icon"></span>
+                            </p>
+                            <p>
+                                <label for="asunto">Asunto</label>
+                                <input type="text" id="asunto">
+                                <span class="icon" id="asunto-icon"></span>
+                            </p>
+                            <p class="block">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea id="mensaje" rows="3"></textarea>
+                            </p>
+                            <p class="block">
+                                <button id="btnCrear" type="submit">ENVIAR</button>
+                            </p>
+                        </form>
+                    </div>
+                    <script>
+                        // Función para validar el campo "Nombres"
+                        function validarNombres() {
+                            var nombres = document.getElementById("nombres").value;
+                            var icon = document.getElementById("nombres-icon");
+
+                            if (nombres.trim() === "" || !/^[a-zA-Z\s]+$/.test(nombres)) {
+                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+
+                            } else {
+                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            }
+                        }
+
+                        // Función para validar el campo "Apellidos" 
+                        function validarApellidos() {
+                            var apellidos = document.getElementById("apellidos").value;
+                            var icon = document.getElementById("apellidos-icon");
+
+                            if (apellidos.trim() === "" || !/^[a-zA-Z\s]+$/.test(apellidos)) {
+                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                            } else {
+                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            }
+                        }
+
+                        // Función para validar el campo "Número de Celular"
+                        function validarCelular() {
+                            var celular = document.getElementById("celular").value;
+                            var icon = document.getElementById("celular-icon");
+
+                            if (!/^\d{9}$/.test(celular)) {
+                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                            } else {
+                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            }
+                        }
+
+                        // Función para validar el correo electrónico
+                        function validarEmail() {
+                            const email = this.value;
+                            const emailIcon = document.getElementById('email-icon');
+                            if (/^\S+@\S+\.\S+$/.test(email)) {
+                                emailIcon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            } else {
+                                emailIcon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                            }
+                        }
+                        // Función para validar el campo "Número de documento"
+                        function validarNumDocumento() {
+                            var numdocumento = document.getElementById("numdocumento").value;
+                            var tipodocumento = document.getElementById("tipodocumento").value;
+                            var icon = document.getElementById("numdocumento-icon");
+
+                            if (tipodocumento === "DNI") {
+                                if (!/^\d{8}$/.test(numdocumento)) {
+                                    icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                                } else {
+                                    icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                                }
+                            } else if (tipodocumento === "CNE") {
+                                if (!/^\d{12}$/.test(numdocumento)) {
+                                    icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                                } else {
+                                    icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                                }
+                            }
+                        }
+
+                        // Agrega event listeners para validar en tiempo real mientras el usuario interactúa con los campos
+                        document.getElementById("nombres").addEventListener("input", validarNombres);
+                        document.getElementById("apellidos").addEventListener("input", validarApellidos);
+                        document.getElementById("celular").addEventListener("input", validarCelular);
+                        document.getElementById("email").addEventListener("input", validarEmail);
+                        document.getElementById("tipodocumento").addEventListener("input", validarNumDocumento);
+                        document.getElementById("numdocumento").addEventListener("input", validarNumDocumento);
+                    </script>
+                </div>
+                <div class="contact-info">
+                    <h2>MÁS INFORMACIÓN</h2>
+                    <hr>
+                    <ul>
+                        <h3>LLÁMANOS AL:</h3>
+                        <p>+51 987 654 321</p>
+                        <p></p>
+                        <h3>UBÍCANOS:</h3>
+                        <p>Sede Común: Av. Los Libertadores SN
+                            San Vicente de Cañete 15701
+                            Perú</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.79701102101427!2d-76.38753563653933!3d-13.07533477875521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff93129b43083%3A0xcfabeb14648ef0fc!2sIEP%20Jose%20Buenaventura%20Sep%C3%BAlveda%20Fernandez!5e0!3m2!1ses!2spe!4v1698353953847!5m2!1ses!2spe"
+                            width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <p>Sede Técnica: Jiron O'Higgins 398, en San Vicente de Cañete</p>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.443186663237!2d-76.3890935!3d-13.0763054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff9380e478f97%3A0x4c7034d9a5bfe784!2sInstituci%C3%B3n%20Educativa%20Jos%C3%A9%20Buenaventura%20Sepulveda!5e0!3m2!1ses!2spe!4v1698260302482!5m2!1ses!2spe"
+                            width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-danger table-striped mb-3" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombres</th>
+                            <th scope="col">Apellidos</th>
+                            <th scope="col">Tipo_documento</th>
+                            <th scope="col">Numero_documento</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Celular</th>
+                            <th scope="col">Asunto</th>
+                            <th scope="col">Mensaje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data">
+                        <!-- Agrega tus datos dinámicamente aquí -->
+                    </tbody>
+                </table>
+            </div>
+            <script src="registro.js"></script>
+        </div>
+
+    </div>
+    <!--Footer-->
+
+    <footer class="footer">
+        <div class="container1">
+            <div class="row">
+                <div class="footer-col">
+                    <div class="logo-container">
+                        <img src="/LandingPage/img/Bienvenidos.png" alt="Logo" class="logo">
+                    </div>
+                    <p>¡Sepúlveda, Honor y Gallardía!</p><br>
+                    <!--<p> RA, RA, RA</p><br>-->
+
+                    <h4>Síguenos en:</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/IEPSEPULVEDA/"><svg xmlns="http://www.w3.org/2000/svg"
+                                width="34" height="44" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+                            </svg></a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-.139 9.237c.209 4.617-3.234 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.08-4.03 3.199-4.03.943 0 1.797.398 2.395 1.037.748-.147 1.451-.42 2.086-.796-.246.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.439.656-.996 1.234-1.639 1.697z" />
+                            </svg>
+                        </a>
+                        <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+                            </svg></a>
+                        <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#">Quiénes Somos</a></li>
+                        <li><a href="#">Talleres Formativos</a></li>
+                        <li><a href="#">Contáctenos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Encuentranos en:</h4>
+                    <ul>
+                        <li><a href="#">Avenida O'Higgins # 398 <br>
+                                San Vicente, Cañete <br>
+                                Lima - Perú</a></li>
+                        <li><a href="https://www.sepulveda.pe">www.sepulveda.edu.pe</a></li>
+                        <li><a href="#">Email: informes@sepulveda.edu.pe</a></li>
+                        <li><a href="#">Celular: 963852741</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+

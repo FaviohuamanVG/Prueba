@@ -1,0 +1,319 @@
+  <!-- Headboard -->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEP José Buenaventura Sepúlveda</title>
+    <link type="Imagen" rel="Icon" href="/LandingPage/img/logo-JBS.jpg">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="/LandingPage/CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/LandingPage/JS/script.JS"></script>
+  </head>
+  
+  <body>
+  
+    <div class="menu-btn">
+      <i class="fas fa-bars fa-2x"></i>
+    </div>
+  
+    <div class="container">
+      <!-- Navigation -->
+      <nav class="nav-main">
+        <!-- Brand -->
+        <img src="/LandingPage/img/Bienvenidos.png" alt="TechNews Logo" class="nav-brand">
+        <!-- Left Nav -->
+        <ul class="nav-menu"> 
+          <li>
+            <a href="/LandingPage/HTML/quienessomos.html">Quienes Somos</a>
+          </li>
+          <li>
+            <a href="/LandingPage/HTML/TalleresFormativos.html">Talleres Formativos</a>
+          </li>
+          <li>
+            <a href="/LandingPage/Contactenos.html">Contáctenos</a>
+          </li>
+        </ul>
+  
+        <!-- Right Nav -->
+        <ul class="nav-menu-right">
+        </ul>
+      </nav>
+      <hr>
+    </div>
+    <!-- Headboard -->
+
+    <!-- SHOWCASE -->
+    <header class="showcase">
+      <h1>¡Bienvenido al Colegio José Buenaventura Sepúlveda Fernández!</h1>
+      <p>EDUCACIÓN EN VALORES Y DESARROLLO EMPRESARIAL</p>
+      <p>¡Sepúlveda Honor y Gallardía, Ra, Ra, Ra!</p>
+    </header>
+
+    <div id="fechas-civicas">
+      <ul id="fechas-civicas-list">
+        <!-- Los datos se agregarán aquí -->
+      </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+$(document).ready(function() {
+    var url = "http://localhost:3001/fechas_civicas";
+    var fechaActual = new Date();
+    var dia = fechaActual.getDate().toString().padStart(2, '0');
+    var mes = (fechaActual.getMonth() + 1).toString().padStart(2, '0');
+    var año = fechaActual.getFullYear();
+    var fechaActualFormato = dia + '-' + mes + '-' + año; // Formato "AAAA-MM-DD"
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function(data) {
+            var fechasCivicasList = document.getElementById('fechas-civicas-list');
+
+            if (data.length > 0) {
+                data.forEach(function(fecha) {
+                    var fechaEvento = new Date(fecha.fecha);
+                    var diaEvento = fechaEvento.getDate().toString().padStart(2, '0');
+                    var mesEvento = (fechaEvento.getMonth() + 1).toString().padStart(2, '0');
+                    var añoEvento = fechaEvento.getFullYear(); // Obtén el año de la fecha
+
+                    // Crea un elemento li para mostrar la información en el formato deseado
+                    var li = document.createElement('li');
+                    li.textContent = `Hoy ${diaEvento}-${mesEvento}-${añoEvento} es: "${fecha.nombre_celebracion}" tipo: ${fecha.tipo}. Responsable: ${fecha.responsable}`;
+                    fechasCivicasList.appendChild(li);
+                });
+
+                if (fechasCivicasList.childNodes.length === 0) {
+                    fechasCivicasList.textContent = "No hay fechas cívicas futuras.";
+                }
+            } else {
+                fechasCivicasList.textContent = "No hay fechas cívicas.";
+            }
+        },
+        error: function(error) {
+            console.log("Error al cargar las fechas cívicas: " + error);
+        }
+    });
+
+    var fechaActualContainer = document.getElementById('fecha-actual');
+    fechaActualContainer.textContent = `Hoy ${fechaActualFormato}`;
+});
+    </script>
+      <!-- NEWS CARDS 2 -->
+      <h2>CONTAMOS CON:          </h2>
+      <div class="news-cards">
+        <div>
+          <img src="/LandingPage/img/mecanica1.jpg" alt="" />
+          <h3>TALLERES DE MECANICA</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/cocina1.jpg" alt="" />
+          <h3>TALLERES DE COCINA</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/computación1.jpg" alt="" />
+          <h3>TALLERES DE COMPUTACION</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/carpinteria1.jpg" alt="" />
+          <h3>TALLERES DE CARPINTERIA</h3>
+          <p>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card Banner 2 -->
+      <section class="cards-banner-two">
+        <div class="content">
+          <h2>¿QUIÉNES SOMOS?          </h2>
+          <!-- lorem 20 -->
+          <p>Somos la IEP. José Buenaventura Sepúlveda del nivel secundaria de 
+            varones con modelo de servicio educativo con formación técnica 
+            (MSESTF) y Humanista, ubicada en la provincia de Cañete, nuestros
+            estudiantes provienen de familias dedicadas a diferentes actividades 
+            económicas, aprovechando los recursos de nuestra localidad para el 
+            emprendimiento.</p>
+        </div>
+      </section>
+
+      <!-- NEWS CARDS 2 -->
+      <h2>CONTAMOS CON:          </h2>
+      <div class="news-cards">
+        <div>
+          <img src="/LandingPage/img/mecanica1.jpg" alt="" />
+          <h3>TALLERES DE MECANICA</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/cocina1.jpg" alt="" />
+          <h3>TALLERES DE COCINA</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/computación1.jpg" alt="" />
+          <h3>TALLERES DE COMPUTACION</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/carpinteria1.jpg" alt="" />
+          <h3>TALLERES DE CARPINTERIA</h3>
+          <p>
+          </p>
+        </div>
+      </div>
+
+      <!-- Card Banner 2 -->
+      <section class="cards-banner-two">
+        <div class="content">
+          <h2>NUESTRA MISIÓN          </h2>
+          <!-- lorem 20 -->
+          <p>Somos una institución educativa que brinda un servicio educativo de 
+            formación técnica (MSESTF) y Humanista, donde nuestro objetivo es 
+            lograr que nuestros estudiantes culminen el nivel secundario para su 
+            transitabilidad, afianzando los aprendizajes establecidos en el 
+            Currículo Nacional y alcancen su desarrollo integral en espacios 
+            seguros, inclusivos, de sana convivencia y libre de violencia.</p>
+        </div>
+      </section>
+
+      <!-- NEWS CARDS 2 -->
+      <h2>ENFOCADA EN:          </h2>
+      <div class="news-cards">
+        <div>
+          <img src="/LandingPage/img/mecanica1.jpg" alt="" />
+          <h3>ALUMNOS CAPCITADOS</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/cocina1.jpg" alt="" />
+          <h3>BUSQUEDA DEL BIEN COMUN</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/computación1.jpg" alt="" />
+          <h3>DESARROLLO DE CONOCIMIENTOS</h3>
+          <p>
+          </p>
+        </div>
+        <div>
+          <img src="/LandingPage/img/carpinteria1.jpg" alt="" />
+          <h3>VALORES DEL ESTUDIANTE</h3>
+          <p>
+          </p>
+        </div>
+      </div>
+  
+      <!-- Card Banner 2 -->
+      <section class="cards-banner-two">
+        <div class="content">
+          <h2>NUESTRA VISIÓN          </h2>
+          <!-- lorem 20 -->
+          <p>La I.E. José B. Sepúlveda Fernández se proyecta hacia el 2025 ser una 
+            institución de prestigio con presencia nacional en la enseñanza 
+            humanística, técnica y científica utilizando diversos recursos 
+            tecnológicos de manera sostenible y eficiente, destacando en el área 
+            de investigación.</p>
+        </div>
+      </section>
+
+    <!-- NEWS CARDS 4-->
+    <h2>ALUMNOS DESTACADOS:</h2>
+    <div class="news-cards">
+      <div>
+        <img src="/LandingPage/img/alumno1.jpg" alt="" />
+        <h3>JESUS CANALES</h3>
+        <p>Ingeniero de Sistemas</p>
+      </div>
+      <div>
+        <img src="/LandingPage/img/alumno3.jpg" alt="" />
+        <h3>FAVIO HUAMAN</h3>
+        <p>Analista de ciberseguridad</p>
+      </div>
+      <div>
+        <img src="/LandingPage/img/alumno2.jpg" alt="" />
+        <h3>SANTIAGO PRADA</h3>
+        <p>Jefe de area en base de datos</p>
+      </div>
+      <div>
+        <img src="/LandingPage/img/alumno1.jpg" alt="" />
+        <h3>JHOAN VICENTE</h3>
+        <p>Adminitrador de empresas</p>
+      </div>
+    </div>
+
+    <!-- Site footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <div class="logo-container">
+              <img src="/LandingPage/img/Bienvenidos.png" alt="Logo" class="logo">
+            </div>
+            <p>¡Sepúlveda, Honor y Gallardía!</p><br>
+            <!--<p> RA, RA, RA</p><br>-->
+
+            <h4>Síguenos en:</h4>
+            <div class="social-links">
+              <a href="https://www.facebook.com/IEPSEPULVEDA/"><svg xmlns="http://www.w3.org/2000/svg" width="34"
+                  height="44" viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.35c-.538 0-.65.221-.65.778v1.222h2l-.209 2h-1.791v7h-3v-7h-2v-2h2v-2.308c0-1.769.931-2.692 3.029-2.692h1.971v3z" />
+                </svg></a>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-.139 9.237c.209 4.617-3.234 9.765-9.33 9.765-1.854 0-3.579-.543-5.032-1.475 1.742.205 3.48-.278 4.86-1.359-1.437-.027-2.649-.976-3.066-2.28.515.098 1.021.069 1.482-.056-1.579-.317-2.668-1.739-2.633-3.26.442.246.949.394 1.486.411-1.461-.977-1.875-2.907-1.016-4.383 1.619 1.986 4.038 3.293 6.766 3.43-.479-2.053 1.08-4.03 3.199-4.03.943 0 1.797.398 2.395 1.037.748-.147 1.451-.42 2.086-.796-.246.767-.766 1.41-1.443 1.816.664-.08 1.297-.256 1.885-.517-.439.656-.996 1.234-1.639 1.697z" />
+                </svg>
+              </a>
+              <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 8c0 .557-.447 1.008-1 1.008s-1-.45-1-1.008c0-.557.447-1.008 1-1.008s1 .452 1 1.008zm0 2h-2v6h2v-6zm3 0h-2v6h2v-2.861c0-1.722 2.002-1.881 2.002 0v2.861h1.998v-3.359c0-3.284-3.128-3.164-4-1.548v-1.093z" />
+                </svg></a>
+              <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" width="34" height="44" viewBox="0 0 24 24">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Enlaces</h4>
+            <ul>
+              <li><a href="#">Quiénes Somos</a></li>
+              <li><a href="#">Talleres Formativos</a></li>
+              <li><a href="#">Contáctenos</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Encuentranos en:</h4>
+            <ul>
+              <li><a href="#">Avenida O'Higgins # 398 <br>
+                  San Vicente, Cañete <br>
+                  Lima - Perú</a></li>
+              <li><a href="https://www.sepulveda.pe">www.sepulveda.edu.pe</a></li>
+              <li><a href="#">Email: informes@sepulveda.edu.pe</a></li>
+              <li><a href="#">Celular: 987654321</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="LandingPage/JS/dates.js"></script>
+</body>
+
+</html>
