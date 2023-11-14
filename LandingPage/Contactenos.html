@@ -54,9 +54,7 @@
 
         <!-- SHOWCASE -->
         <header class="showcase">
-            <h1>¡Bienvenido al Colegio José Buenaventura Sepúlveda Fernández!</h1>
-            <p>EDUCACIÓN EN VALORES Y DESARROLLO EMPRESARIAL</p>
-            <p>¡Sepúlveda Honor y Gallardía, Ra, Ra, Ra!</p>
+            
         </header>
 
         <div class="content">
@@ -71,180 +69,267 @@
                 TU PARTICIPACIÓN ES ESENCIAL PARA AYUDARNOS A CONSTRUIR UN ENTORNO <br>
                 EDUCATIVO EXCEPCIONAL"</p>
             <hr>
+            <br>
             <div class="contact-wrapper animated bounceInUp">
-                <div class="contact-form">
-                    <h3 style="text-align: center;">¡Gracias por tomar un momento para completar este formulario!</h3>
-                    <div class="form-container">
-                        <form>
-                            <p>
-                                <label for="nombres">Nombres</label>
-                                <input type="text" id="nombres">
+                <div class="custom-form-container">
+                    <form class="custom-form">
+                        <h3>¡Gracias por tomar un momento para completar este formulario!</h3>
+                        <div class="form-group">
+                            <label for="nombres" class="form-label">Nombres</label>
+                            <div class="input-group">
+                                <input type="text" id="nombres" class="form-control" placeholder="Ingresa tus nombres">
                                 <span class="icon" id="nombres-icon"></span>
-                            </p>
-                            <p>
-                                <label for="apellidos">Apellidos</label>
-                                <input type="text" id="apellidos">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apellidos" class="form-label">Apellidos</label>
+                            <div class="input-group">
+                                <input type="text" id="apellidos" class="form-control"
+                                    placeholder="Ingresa tus apellidos">
                                 <span class="icon" id="apellidos-icon"></span>
-                            </p>
-                            <p>
-                                <label for="email">Email</label>
-                                <input type="email" id="email">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <div class="input-group">
+                                <input type="email" id="email" class="form-control"
+                                    placeholder="Ingresa tu correo electrónico">
                                 <span class="icon" id="email-icon"></span>
-                            </p>
-                            <p>
-                                <label for="celular">Número de Celular</label>
-                                <input type="tel" id="celular">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="celular" class="form-label">Número de Celular</label>
+                            <div class="input-group">
+                                <input type="tel" id="celular" class="form-control"
+                                    placeholder="Ingresa tu número de celular">
                                 <span class="icon" id="celular-icon"></span>
-                            </p>
-                            <p>
-                                <label for="tipodocumento">Tipo de documento</label>
-                                <select type="text" id="tipodocumento">
-                                    <option value="DNI">DNI</option>
-                                    <option value="CNE">CNE</option>
-                                </select>
-                            </p>
-                            <p>
-                                <label for="numdocumento">Número de documento</label>
-                                <input type="Numbers" id="numdocumento">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tipodocumento" class="form-label">Tipo de documento</label>
+                            <select id="tipodocumento" class="form-control">
+                                <option value="DNI">DNI</option>
+                                <option value="CNE">CNE</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="numdocumento" class="form-label">Número de documento</label>
+                            <div class="input-group">
+                                <input type="number" id="numdocumento" class="form-control"
+                                    placeholder="Ingresa tu número de documento">
                                 <span class="icon" id="numdocumento-icon"></span>
-                            </p>
-                            <p>
-                                <label for="asunto">Asunto</label>
-                                <input type="text" id="asunto">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto" class="form-label">Asunto</label>
+                            <div class="input-group">
+                                <input type="text" id="asunto" class="form-control" placeholder="Ingresa el asunto">
                                 <span class="icon" id="asunto-icon"></span>
-                            </p>
-                            <p class="block">
-                                <label for="mensaje">Mensaje</label>
-                                <textarea id="mensaje" rows="3"></textarea>
-                            </p>
-                            <p class="block">
-                                <button id="btnCrear" type="submit">ENVIAR</button>
-                            </p>
-                        </form>
-                    </div>
-                    <script>
-                        // Función para validar el campo "Nombres"
-                        function validarNombres() {
-                            var nombres = document.getElementById("nombres").value;
-                            var icon = document.getElementById("nombres-icon");
+                            </div>
+                        </div>
 
-                            if (nombres.trim() === "" || !/^[a-zA-Z\s]+$/.test(nombres)) {
-                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        <div class="form-group">
+                            <label for="mensaje" class="form-label">Mensaje</label>
+                            <textarea id="mensaje" rows="3" class="form-control"
+                                placeholder="Escribe tu mensaje"></textarea>
+                        </div>
 
-                            } else {
-                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                            }
-                        }
+                        <button id="btnCrear" type="submit" class="btn-submit">ENVIAR</button>
 
-                        // Función para validar el campo "Apellidos" 
-                        function validarApellidos() {
-                            var apellidos = document.getElementById("apellidos").value;
-                            var icon = document.getElementById("apellidos-icon");
-
-                            if (apellidos.trim() === "" || !/^[a-zA-Z\s]+$/.test(apellidos)) {
-                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
-                            } else {
-                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                            }
-                        }
-
-                        // Función para validar el campo "Número de Celular"
-                        function validarCelular() {
-                            var celular = document.getElementById("celular").value;
-                            var icon = document.getElementById("celular-icon");
-
-                            if (!/^\d{9}$/.test(celular)) {
-                                icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
-                            } else {
-                                icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                            }
-                        }
-
-                        // Función para validar el correo electrónico
-                        function validarEmail() {
-                            const email = this.value;
-                            const emailIcon = document.getElementById('email-icon');
-                            if (/^\S+@\S+\.\S+$/.test(email)) {
-                                emailIcon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                            } else {
-                                emailIcon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
-                            }
-                        }
-                        // Función para validar el campo "Número de documento"
-                        function validarNumDocumento() {
-                            var numdocumento = document.getElementById("numdocumento").value;
-                            var tipodocumento = document.getElementById("tipodocumento").value;
-                            var icon = document.getElementById("numdocumento-icon");
-
-                            if (tipodocumento === "DNI") {
-                                if (!/^\d{8}$/.test(numdocumento)) {
-                                    icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
-                                } else {
-                                    icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                                }
-                            } else if (tipodocumento === "CNE") {
-                                if (!/^\d{12}$/.test(numdocumento)) {
-                                    icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
-                                } else {
-                                    icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
-                                }
-                            }
-                        }
-
-                        // Agrega event listeners para validar en tiempo real mientras el usuario interactúa con los campos
-                        document.getElementById("nombres").addEventListener("input", validarNombres);
-                        document.getElementById("apellidos").addEventListener("input", validarApellidos);
-                        document.getElementById("celular").addEventListener("input", validarCelular);
-                        document.getElementById("email").addEventListener("input", validarEmail);
-                        document.getElementById("tipodocumento").addEventListener("input", validarNumDocumento);
-                        document.getElementById("numdocumento").addEventListener("input", validarNumDocumento);
-                    </script>
-                </div>
-                <div class="contact-info">
-                    <h2>MÁS INFORMACIÓN</h2>
-                    <hr>
-                    <ul>
-                        <h3>LLÁMANOS AL:</h3>
-                        <p>+51 987 654 321</p>
-                        <p></p>
-                        <h3>UBÍCANOS:</h3>
-                        <p>Sede Común: Av. Los Libertadores SN
-                            San Vicente de Cañete 15701
-                            Perú</p>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.79701102101427!2d-76.38753563653933!3d-13.07533477875521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff93129b43083%3A0xcfabeb14648ef0fc!2sIEP%20Jose%20Buenaventura%20Sep%C3%BAlveda%20Fernandez!5e0!3m2!1ses!2spe!4v1698353953847!5m2!1ses!2spe"
-                            width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <p>Sede Técnica: Jiron O'Higgins 398, en San Vicente de Cañete</p>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.443186663237!2d-76.3890935!3d-13.0763054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff9380e478f97%3A0x4c7034d9a5bfe784!2sInstituci%C3%B3n%20Educativa%20Jos%C3%A9%20Buenaventura%20Sepulveda!5e0!3m2!1ses!2spe!4v1698260302482!5m2!1ses!2spe"
-                            width="500" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-                    </ul>
+                    </form>
                 </div>
             </div>
-            <div class="table-responsive">
-                <table class="table table-danger table-striped mb-3" id="dataTable">
-                    <thead>
-                        <tr>
-                            <th scope="col">Nombres</th>
-                            <th scope="col">Apellidos</th>
-                            <th scope="col">Tipo_documento</th>
-                            <th scope="col">Numero_documento</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Celular</th>
-                            <th scope="col">Asunto</th>
-                            <th scope="col">Mensaje</th>
-                        </tr>
-                    </thead>
-                    <tbody id="data">
-                        <!-- Agrega tus datos dinámicamente aquí -->
-                    </tbody>
-                </table>
-            </div>
-            <script src="registro.js"></script>
+            <script>
+                // Función para validar el campo "Nombres"
+                function validarNombres() {
+                    var nombres = document.getElementById("nombres").value;
+                    var icon = document.getElementById("nombres-icon");
+            
+                    if (nombres.trim() === "" || !/^[a-zA-Z\s]+$/.test(nombres)) {
+                        icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        return false;
+                    } else {
+                        icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                        return true;
+                    }
+                }
+            
+                // Función para validar el campo "Apellidos" 
+                function validarApellidos() {
+                    var apellidos = document.getElementById("apellidos").value;
+                    var icon = document.getElementById("apellidos-icon");
+            
+                    if (apellidos.trim() === "" || !/^[a-zA-Z\s]+$/.test(apellidos)) {
+                        icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        return false;
+                    } else {
+                        icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                        return true;
+                    }
+                }
+            
+                // Función para validar el campo "Número de Celular"
+                function validarCelular() {
+                    var celular = document.getElementById("celular").value;
+                    var icon = document.getElementById("celular-icon");
+            
+                    if (!/^\d{9}$/.test(celular)) {
+                        icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        return false;
+                    } else {
+                        icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                        return true;
+                    }
+                }
+            
+                // Función para validar el correo electrónico
+                function validarEmail() {
+                    const email = document.getElementById('email').value;
+                    const emailIcon = document.getElementById('email-icon');
+                    if (/^\S+@\S+\.\S+$/.test(email)) {
+                        emailIcon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                        return true;
+                    } else {
+                        emailIcon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                        return false;
+                    }
+                }
+            
+                // Función para validar el campo "Número de documento"
+                function validarNumDocumento() {
+                    var numdocumento = document.getElementById("numdocumento").value;
+                    var tipodocumento = document.getElementById("tipodocumento").value;
+                    var icon = document.getElementById("numdocumento-icon");
+            
+                    if (tipodocumento === "DNI") {
+                        if (!/^\d{8}$/.test(numdocumento)) {
+                            icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                            return false;
+                        } else {
+                            icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            return true;
+                        }
+                    } else if (tipodocumento === "CNE") {
+                        if (!/^\d{12}$/.test(numdocumento)) {
+                            icon.innerHTML = '<i class="fas fa-times-circle" style="color: red;"></i>';
+                            return false;
+                        } else {
+                            icon.innerHTML = '<i class="fas fa-check-circle" style="color: green;"></i>';
+                            return true;
+                        }
+                    }
+                }
+            
+                // Función para validar el formulario antes de enviarlo
+                function validarFormulario() {
+                    var nombresValido = validarNombres();
+                    var apellidosValido = validarApellidos();
+                    var celularValido = validarCelular();
+                    var emailValido = validarEmail();
+                    var numDocumentoValido = validarNumDocumento();
+            
+                    // Permitir el envío del formulario solo si todas las validaciones son correctas
+                    if (nombresValido && apellidosValido && celularValido && emailValido && numDocumentoValido) {
+                        // Agregar aquí cualquier lógica adicional antes de enviar el formulario si es necesario
+                        // Por ejemplo, puedes enviar el formulario usando document.getElementById("formulario").submit();
+                        alert("Formulario válido. Puedes enviarlo.");
+                    } else {
+                        alert("Por favor, completa correctamente todos los campos antes de enviar el formulario.");
+                    }
+                }
+
+            
+                // Agrega event listeners para validar en tiempo real mientras el usuario interactúa con los campos
+                document.getElementById("nombres").addEventListener("input", function() {
+                    validarNombres();
+                    habilitarEnvio();
+                });
+                document.getElementById("apellidos").addEventListener("input", function() {
+                    validarApellidos();
+                    habilitarEnvio();
+                });
+                document.getElementById("celular").addEventListener("input", function() {
+                    validarCelular();
+                    habilitarEnvio();
+                });
+                document.getElementById("email").addEventListener("input", function() {
+                    validarEmail();
+                    habilitarEnvio();
+                });
+                document.getElementById("tipodocumento").addEventListener("input", function() {
+                    validarNumDocumento();
+                    habilitarEnvio();
+                });
+                document.getElementById("numdocumento").addEventListener("input", function() {
+                    validarNumDocumento();
+                    habilitarEnvio();
+                });
+            
+                // Agrega un event listener para validar el formulario antes de enviarlo
+                document.getElementById("formulario").addEventListener("submit", function (event) {
+                    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+                    validarFormulario();
+                });
+            </script>
+            
         </div>
+        <br><br>
+        <div class="contact-info">
+            <h2 class="info-heading">MÁS INFORMACIÓN</h2>
+            <hr class="info-divider">
+            <div class="contact-section">
+                <div class="contact-details">
+                    <h3 class="contact-subheading">LLÁMANOS AL:</h3>
+                    <p class="contact-text">+51 987 654 321</p>
+                </div>
+                <div class="contact-details">
+                    <h3 class="contact-subheading">UBÍCANOS:</h3>
+                    <p class="contact-text">Sede Común: Av. Los Libertadores SN San Vicente de Cañete 15701 Perú</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.79701102101427!2d-76.38753563653933!3d-13.07533477875521!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff93129b43083%3A0xcfabeb14648ef0fc!2sIEP%20Jose%20Buenaventura%20Sep%C3%BAlveda%20Fernandez!5e0!3m2!1ses!2spe!4v1698353953847!5m2!1ses!2spe"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <p class="contact-text">Sede Técnica: Jiron O'Higgins 398, en San Vicente de Cañete</p>
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15545.443186663237!2d-76.3890935!3d-13.0763054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910ff9380e478f97%3A0x4c7034d9a5bfe784!2sInstituci%C3%B3n%20Educativa%20Jos%C3%A9%20Buenaventura%20Sepulveda!5e0!3m2!1ses!2spe!4v1698260302482!5m2!1ses!2spe"
+                            width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+    </div>
+    <div class="table-responsive">
+        <table class="table table-danger table-striped mb-3" id="dataTable">
+            <thead>
+                <tr>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Tipo_documento</th>
+                    <th scope="col">Numero_documento</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Celular</th>
+                    <th scope="col">Asunto</th>
+                    <th scope="col">Mensaje</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+                <!-- Agrega tus datos dinámicamente aquí -->
+            </tbody>
+        </table>
+    </div>
+    <script src="registro.js"></script>
+    </div>
 
     </div>
     <!--Footer-->
@@ -307,4 +392,3 @@
 </body>
 
 </html>
-

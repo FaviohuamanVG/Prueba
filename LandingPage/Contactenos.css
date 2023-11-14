@@ -12,6 +12,11 @@ body {
     font-size: 16px;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 a {
     color: #ffffff;
     text-decoration: none;
@@ -25,6 +30,11 @@ ul {
     max-width: 1170px;
     margin: auto;
     padding: 1.5em;
+}
+
+h3{
+    color: #000;
+    text-align: center;
 }
 
 /* Estilos para la navegación */
@@ -97,7 +107,7 @@ ul {
 .showcase {
     width: 100%;
     height: 550px;
-    background: url("./img/formulariobnner.png") no-repeat center center/cover;
+    background: url("img/Banner_Talleres.jpg") no-repeat center center/cover;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,106 +126,139 @@ ul {
 .showcase .btn {
     margin-top: 20px;
 }
-/* Estilos para el formulario */
-.form-container {
-    background-color: #1e2022;
+
+/*formulario estilo*/
+.custom-form-container {
+    max-width: 600px;
+    margin: auto;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    width: 100%;
-    max-width: 600px; /* Ancho máximo de 600px */
-    margin: 0 auto; /* Centra el formulario horizontalmente */
-    box-sizing: border-box;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-container form {
+.custom-form {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
-.form-container label {
+/* Estilos para los elementos del formulario */
+.form-group {
+    display: grid;
+    gap: 5px;
+}
+
+.form-label {
     font-weight: bold;
-    color: #0051ff;
+    color: #000;
 }
 
-.form-container p {
-    margin: 0;
-    padding: 1em;
+.input-group {
+    position: relative;
 }
 
-.form-container .block {
-    grid-column: 1 / 3;
-}
-
-.form-container button,
-.form-container input,
-.form-container textarea,
-.form-container select {
+.form-control {
     width: 100%;
-    padding: .7em;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+/* Estilos para el botón de enviar */
+.btn-submit {
+    background-color: #1092de;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
-    background: none;
-    outline: 0;
-    color: #fff;
-    border-bottom: 1px solid #0051ff;
-    font-weight: bold;
-}
-
-.form-container select {
+    border-radius: 15px;
     cursor: pointer;
-    background-color: #1e2022;
+    transition: background-color 0.3s;
 }
 
-.form-container textarea {
-    resize: vertical;
-    background-color: #1e2022;
+.btn-submit:hover {
+    background-color: #1092de;
 }
 
-.form-container button {
-    background: #0051ff;
-    border: 0;
-    text-transform: uppercase;
-    padding: 1em;
-}
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+    .custom-form-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
 
-.form-container button:hover,
-.form-container button:focus {
-    background: #0051ff;
-    color: #fff;
-    transition: background-color 1s ease-out;
-}
-
-
-/* Estilos para el formulario en pantallas más pequeñas */
-@media (max-width: 768px) {
-    .form-container {
-        padding: 10px; /* Reducir el espacio de relleno en dispositivos móviles */
+    .custom-form {
+        grid-template-columns: 1fr;
     }
 }
 
 
-/* Estilos para la información adicional */
+/* Estilos para la sección de contacto */
 .contact-info {
-    background: #000;
-    color: #fff;
+    max-width: 800px;
+    margin: auto;
     padding: 20px;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    margin: 0 auto; /* Centra horizontalmente */
-    clear: both; /* Evita que esté al lado del formulario */
-    max-width: 600px; /* Limita el ancho máximo */
-    margin-top: 20px; /* Espacio superior */
-    margin-bottom: 20px; /* Espacio inferior */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.contact-info h2 {
+.info-heading {
     font-size: 24px;
-    margin-top: 20px;
-    color: #0051ff;
+    color: #000000;
+    text-align: center;
+}
+
+.info-divider {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.contact-section {
+    display: grid;
+    gap: 20px;
+}
+
+.contact-details {
+    text-align: center;
+}
+
+.contact-subheading {
+    font-size: 18px;
+    color: #4caf50;
+}
+
+.contact-text {
+    font-size: 16px;
+    color: #000000;
+}
+
+.map-container {
+    margin-top: 10px;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 600px) {
+    .contact-section {
+        grid-template-columns: 1fr;
+    }
+
+    .map-container {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 768px) {
+    .contact-info {
+        padding: 15px;
+    }
 }
 
 /* Estilos para hacer la tabla responsive */
@@ -223,9 +266,41 @@ ul {
     overflow-x: auto;
 }
 
-table {
+.table {
     width: 100%;
-    max-width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 0, 0, 0.05); /* Color de fondo para filas impares */
+}
+
+.table-danger,
+.table-danger > th,
+.table-danger > td {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
 }
 
 /* Estilos para el pie de página */
@@ -321,6 +396,7 @@ table {
 
 /* Estilos para el formulario en pantallas más pequeñas */
 @media (max-width: 768px) {
+
     .form-container,
     .contact-info {
         width: 100%;
@@ -368,6 +444,7 @@ body {
 ul {
     list-style: none;
 }
+
 /* Estilos para hacer la tabla responsive */
 .table-responsive {
     overflow-x: auto;
@@ -377,6 +454,7 @@ table {
     width: 100%;
     max-width: 100%;
 }
+
 /*footer*/
 .footer {
     background-color: #19a2f1;
@@ -475,7 +553,6 @@ p {
     font-weight: bold;
     color: white;
 }
-
 
 .form-group label {
     width: 150px;
