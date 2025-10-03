@@ -1,12 +1,17 @@
 name: 🚀 CI/CD with SonarCloud - Complete Analysis
 
+# DESHABILITADO TEMPORALMENTE - Probando primero ci-cd-complete.yml
+# Para habilitar: descomentar el bloque 'on:' cuando quieras activar SonarCloud
+
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main, develop]
-    types: [opened, synchronize, reopened]
-  workflow_dispatch:
+  workflow_dispatch:  # Solo se ejecutará manualmente
+  
+# on:
+#   push:
+#     branches: [main, develop]
+#   pull_request:
+#     branches: [main, develop]
+#     types: [opened, synchronize, reopened]
 
 env:
   REGISTRY: ghcr.io

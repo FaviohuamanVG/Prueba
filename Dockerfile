@@ -1,8 +1,8 @@
 # 🐳 Multi-stage Dockerfile para Spring Boot
 # Optimizado para tamaño y seguridad
 
-# Stage 1: Build
-FROM maven:3.9-eclipse-temurin-17-alpine AS build
+# Stage 1: Build (multi-arch compatible)
+FROM maven:3.9-eclipse-temurin-17 AS build
 WORKDIR /app
 
 # Copy dependency files first (better cache)
