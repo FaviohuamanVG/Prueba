@@ -7,6 +7,8 @@ on:
     branches: [main, develop]
   workflow_dispatch:
 
+# NOTA: Docker build solo ocurre en push a 'main' o 'develop'
+
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -84,7 +86,7 @@ jobs:
     name: 🐳 Docker Build & Push
     runs-on: ubuntu-latest
     needs: build-test-coverage
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     permissions:
       contents: read
       packages: write
@@ -158,7 +160,7 @@ jobs:
     name: 🔒 Security Scan
     runs-on: ubuntu-latest
     needs: docker-build-push
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/develop')
     permissions:
       contents: read
       security-events: write
