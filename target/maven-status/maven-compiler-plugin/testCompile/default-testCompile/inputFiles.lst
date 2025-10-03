@@ -1,7 +1,7 @@
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\service\CatalogServiceTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\service\CatalogServiceUnitTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\service\CatalogServiceAdvancedTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\service\CatalogServiceIntegrationTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\model\ProductTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\controller\CatalogControllerTest.java
-C:\Users\lucio\Music\mc_JaCoCo\ms-catalog\src\test\java\com\techtrend\catalog\CatalogMicroserviceApplicationTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/service/CatalogServiceIntegrationTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/controller/CatalogControllerTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/CatalogMicroserviceApplicationTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/service/CatalogServiceAdvancedTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/service/CatalogServiceUnitTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/service/CatalogServiceTest.java
+/workspaces/Prueba/src/test/java/com/techtrend/catalog/model/ProductTest.java

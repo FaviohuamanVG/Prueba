@@ -1,0 +1,7 @@
+com/techtrend/catalog/model/ProductTest.class
+com/techtrend/catalog/service/CatalogServiceIntegrationTest.class
+com/techtrend/catalog/CatalogMicroserviceApplicationTest.class
+com/techtrend/catalog/service/CatalogServiceUnitTest.class
+com/techtrend/catalog/service/CatalogServiceAdvancedTest.class
+com/techtrend/catalog/service/CatalogServiceTest.class
+com/techtrend/catalog/controller/CatalogControllerTest.class

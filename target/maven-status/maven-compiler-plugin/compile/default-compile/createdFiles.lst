@@ -1,0 +1,5 @@
+com/techtrend/catalog/model/Product.class
+com/techtrend/catalog/service/CatalogServiceImpl.class
+com/techtrend/catalog/CatalogMicroserviceApplication.class
+com/techtrend/catalog/controller/CatalogController.class
+com/techtrend/catalog/service/CatalogService.class
