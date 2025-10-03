@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Product.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">catalog-microservice</a> &gt; <a href="index.source.html" class="el_package">com.techtrend.catalog.model</a> &gt; <span class="el_source">Product.java</span></div><h1>Product.java</h1><pre class="source lang-java linenums">package com.techtrend.catalog.model;
+
+import java.math.BigDecimal;
+
+/**
+ * Entidad Product que representa un producto en el catálogo
+ */
+public class Product {
+    private String id;
+    private String name;
+    private BigDecimal price;
+    private Integer quantity;
+
+<span class="fc" id="L14">    public Product() {}</span>
+
+<span class="fc" id="L16">    public Product(String id, String name, BigDecimal price, Integer quantity) {</span>
+<span class="fc" id="L17">        this.id = id;</span>
+<span class="fc" id="L18">        this.name = name;</span>
+<span class="fc" id="L19">        this.price = price;</span>
+<span class="fc" id="L20">        this.quantity = quantity;</span>
+<span class="fc" id="L21">    }</span>
+
+    public String getId() {
+<span class="fc" id="L24">        return id;</span>
+    }
+
+    public void setId(String id) {
+<span class="fc" id="L28">        this.id = id;</span>
+<span class="fc" id="L29">    }</span>
+
+    public String getName() {
+<span class="fc" id="L32">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L36">        this.name = name;</span>
+<span class="fc" id="L37">    }</span>
+
+    public BigDecimal getPrice() {
+<span class="fc" id="L40">        return price;</span>
+    }
+
+    public void setPrice(BigDecimal price) {
+<span class="fc" id="L44">        this.price = price;</span>
+<span class="fc" id="L45">    }</span>
+
+    public Integer getQuantity() {
+<span class="fc" id="L48">        return quantity;</span>
+    }
+
+    public void setQuantity(Integer quantity) {
+<span class="fc" id="L52">        this.quantity = quantity;</span>
+<span class="fc" id="L53">    }</span>
+
+    public boolean hasStock(Integer requestedQuantity) {
+<span class="pc bpc" id="L56" title="1 of 6 branches missed.">        return this.quantity != null &amp;&amp; requestedQuantity != null &amp;&amp; this.quantity &gt;= requestedQuantity;</span>
+    }
+
+    public boolean isAvailable() {
+<span class="fc bfc" id="L60" title="All 4 branches covered.">        return this.quantity != null &amp;&amp; this.quantity &gt; 0;</span>
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        if (this == obj) return true;</span>
+<span class="pc bpc" id="L66" title="1 of 4 branches missed.">        if (obj == null || getClass() != obj.getClass()) return false;</span>
+<span class="fc" id="L67">        Product product = (Product) obj;</span>
+<span class="fc bfc" id="L68" title="All 2 branches covered.">        return id.equals(product.id) &amp;&amp; </span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">               name.equals(product.name) &amp;&amp; </span>
+<span class="fc bfc" id="L70" title="All 2 branches covered.">               price.equals(product.price) &amp;&amp; </span>
+<span class="pc bpc" id="L71" title="1 of 2 branches missed.">               quantity.equals(product.quantity);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L76">        return java.util.Objects.hash(id, name, price, quantity);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.10.202304240956</span></div></body></html>
